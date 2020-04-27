@@ -13,6 +13,7 @@ npm i prism-svelte # or yarn add prism-svelte
 Import `prismjs` then import `prism-svelte` (the order is very important) and it should work:
 
 ```js
+<script>
 import Prism from 'prismjs';
 import 'prism-svelte';
 
@@ -33,6 +34,17 @@ const source = `
 `;
 
 const highlighted = Prism.highlight(source, Prism.languages.svelte, 'svelte');
+</script>
+```
+
+Then in the component you can use the highlited code as:
+
+```html
+  <pre>
+    <code>
+      {@html highlighted}
+    </code>
+  </pre>
 ```
 
 [prismjs]: https://prismjs.com/
